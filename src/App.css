@@ -1,38 +1,47 @@
-.App {
-  text-align: center;
-}
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.app {
   display: flex;
-  flex-direction: column;
   align-items: center;
+  flex-direction: column;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
 }
 
-.App-link {
-  color: #61dafb;
+.mapping-wrapper {
+  margin-top: 40px;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+.table-wrapper {
+  margin-top: 24px;
+}
+
+/* Media queries for mobile devices */
+@media only screen and (max-width: 600px) {
+  .app {
+    padding: 16px; /* Add padding for better visibility on mobile devices */
   }
-  to {
-    transform: rotate(360deg);
+
+  .mapping-wrapper {
+    margin-top: 20px;
+  }
+
+  .table-wrapper {
+    margin-top: 16px;
+  }
+}
+
+/* Styles for mobile delete drop */
+.delete-drop-area {
+  display: none; /* Initially hide the delete drop area on non-mobile devices */
+}
+
+@media only screen and (max-width: 600px) {
+  .delete-drop-area {
+    display: block; /* Show the delete drop area on mobile devices */
+    height: 100px;
+    width: 100%;
+    background-color: lightgray;
+    border: 2px dashed gray;
+    margin-top: 16px;
+    text-align: center;
+    line-height: 100px;
   }
 }

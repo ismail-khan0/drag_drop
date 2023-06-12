@@ -1,8 +1,7 @@
 import React, { useState } from "react";
 import Table from "./Components/Table";
 import Mapping from "./Components/Mapping";
-import Deletebtn from "./Components/Deletebtn";
-
+import "./App.css"; // Import the CSS file for styling
 function App() {
   const [droppedButtons, setDroppedButtons] = useState([]);
   const [buttonText, setButtonText] = useState("");
@@ -86,30 +85,21 @@ function App() {
   };
   
   return (
-    <div
-      style={{
-        display: "flex",
-        alignItems: "center",
-        flexDirection: "column",
-        justifyContent: "center",
-      }}
-    >
-      <div style={{ marginTop: 40 }}>
-        {" "}
+    <div className="app">
+      <div className="mapping-wrapper">
         <Mapping />
       </div>
-      <Deletebtn onDeleteDrop={handleDeleteDrop} />
 
-      <div style={{ marginTop: 24 }}>
+      <div className="table-wrapper">
         <Table
           buttonText={buttonText}
           onDrop={handleDrop}
           onDragOver={handleDragOver}
+          onMobileDeleteDrop={handleDeleteDrop} // New prop for mobile delete drop
           tableData={tabledata}
         />
       </div>
     </div>
   );
 }
-
 export default App;
